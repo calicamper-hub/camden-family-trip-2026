@@ -7,11 +7,19 @@ packing list everyone can check off together.
 
 This is a one-time build for a single trip — it does not auto-refresh.
 
-## Packing list setup (do this once, takes ~5 minutes)
+## Packing list
 
-The packing list needs a free Firebase Realtime Database so everyone's
-checkmarks sync live. Until you do this, the page falls back to a
-local-only starter list (changes don't save or sync between people).
+Already set up — the packing list is backed by a free Firebase Realtime
+Database (project `camden-trip-2026`), so everyone's checkmarks sync live
+across devices. Nothing to configure; it just works when the page loads.
+
+Test mode security rules (open read/write to anyone with the URL — fine
+for a low-stakes shared list) expire 2026-08-29, well past the trip.
+
+### If you ever need to redo this setup
+
+The steps below are kept for reference in case the Firebase project gets
+deleted or you want to point the page at a different one.
 
 1. Go to **[console.firebase.google.com](https://console.firebase.google.com)**
    and sign in with any Google account.
