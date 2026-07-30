@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Camden, Maine — Family Trip 2026</title>
+<style>
+  :root{
+    --pine:#1b3a2f;
+    --pine-2:#122a21;
+    --lake:#2f7fa6;
+    --lake-hi:#4a9dc7;
+    --granite:#55524d;
+    --birch:#f3efe2;
+    --birch-dim:#dfd8c3;
+    --amber:#c2703d;
+    --amber-hi:#dd8c58;
+    --line:#00000022;
+
+    --bg:var(--birch);
+    --bg-panel:#faf8f0;
+    --bg-strip:var(--pine);
+    --ink:var(--pine-2);
+    --ink-soft:#3d4a44;
+    --ink-faint:#6d7b73;
+    --accent:var(--amber);
+    --accent-ink:#5c3016;
+    --accent-2:var(--lake);
+    --card-bd:#00000018;
+    --card-bg:#ffffffaa;
+    --shadow:0 1px 0 rgba(0,0,0,.05);
+    --on-strip:#eee8d6;
+    --on-strip-dim:#a9b8ab;
+    --ok:#3f7d4f;
+    --ok-bg:#e8f2e9;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#101815;
+      --bg-panel:#16211d;
+      --bg-strip:#0c1712;
+      --ink:#e9e4d4;
+      --ink-soft:#c3c2ae;
+      --ink-faint:#8b9591;
+      --accent:var(--amber-hi);
+      --accent-ink:#2a1c0a;
+      --accent-2:var(--lake-hi);
+      --card-bd:#ffffff1c;
+      --card-bg:#ffffff0a;
+      --shadow:0 1px 0 rgba(0,0,0,.4);
+      --on-strip:#e9e4d4;
+      --on-strip-dim:#8b9591;
+      --ok:#7fc98f;
+      --ok-bg:#173521;
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+
+  .label{
+    font-family:"Arial Narrow","Helvetica Neue Condensed","Roboto Condensed",Arial,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.11em;
+    font-weight:700;
+  }
+  .num{
+    font-family:ui-monospace,"SF Mono","Cascadia Mono",Consolas,monospace;
+    font-variant-numeric:tabular-nums;
+  }
+
+  a{color:var(--accent-2);text-decoration-thickness:1px;text-underline-offset:2px;}
+  a:hover{color:var(--accent);}
+  a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px;}
+
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px 64px;}
+
+  /* ---------- Masthead ---------- */
+  header.mast{
+    background:var(--bg-strip);
+    color:var(--on-strip);
+    padding:34px 24px 22px;
+    border-bottom:3px solid var(--accent);
+  }
+  .mast-inner{max-width:1040px;margin:0 auto;}
+  .mast-eyebrow{
+    font-size:.72rem;color:var(--on-strip-dim);
+    display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:10px;
+  }
+  .mast-eyebrow .dot{opacity:.5;}
+  h1{
+    font-family:"Arial Narrow","Helvetica Neue Condensed","Roboto Condensed",Arial,sans-serif;
+    font-weight:800;
+    letter-spacing:.01em;
+    font-size:clamp(2.1rem,5.6vw,3.4rem);
+    margin:0 0 6px;
+    text-wrap:balance;
+    line-height:1.02;
+  }
+  h1 span{color:var(--accent-hi,var(--accent));}
+  .mast-sub{
+    font-size:1.02rem;
+    color:var(--on-strip-dim);
+    max-width:62ch;
+    font-family:Georgia,serif;
+    font-style:italic;
+  }
+
+  /* ---------- countdown strip ---------- */
+  .strip{
+    display:flex;gap:22px;flex-wrap:wrap;
+    margin-top:18px;padding-top:16px;
+    border-top:1px solid #ffffff22;
+  }
+  .strip-item{min-width:78px;}
+  .strip-item .n{font-size:1.7rem;font-weight:800;font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;}
+  .strip-item .l{font-size:.62rem;color:var(--on-strip-dim);}
+
+  /* ---------- nav ---------- */
+  nav.jump{
+    display:flex;gap:4px;flex-wrap:wrap;
+    padding:14px 24px;
+    background:var(--bg-panel);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:5;
+    backdrop-filter:blur(6px);
+  }
+  nav.jump .inner{max-width:1040px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap;}
+  nav.jump a{
+    font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;
+    padding:6px 12px;border-radius:20px;
+    color:var(--ink-soft);text-decoration:none;
+    border:1px solid var(--line);
+  }
+  nav.jump a:hover{border-color:var(--accent-2);color:var(--accent-2);}
+
+  /* ---------- sections ---------- */
+  section{padding:44px 0 8px;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .sec-head{margin-bottom:20px;}
+  .sec-eyebrow{font-size:.72rem;color:var(--accent-2);margin-bottom:4px;}
+  h2{
+    font-family:"Arial Narrow","Helvetica Neue Condensed","Roboto Condensed",Arial,sans-serif;
+    font-size:clamp(1.5rem,3.4vw,2rem);
+    margin:0;
+    letter-spacing:.005em;
+  }
+  .sec-note{color:var(--ink-faint);font-size:.92rem;font-style:italic;margin-top:6px;max-width:65ch;}
+
+  .card{
+    background:var(--card-bg);
+    border:1px solid var(--card-bd);
+    border-radius:10px;
+    padding:16px 18px;
+    box-shadow:var(--shadow);
+  }
+
+  /* ---------- weather ---------- */
+  .weather-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;}
+  .wcard{text-align:center;padding:14px 8px;}
+  .wcard .d{font-size:.68rem;color:var(--ink-faint);}
+  .wcard .date{font-weight:700;font-size:.8rem;margin-bottom:6px;}
+  .wcard .icon{font-size:1.6rem;margin:4px 0;}
+  .wcard .hi{font-weight:700;}
+  .wcard .lo{color:var(--ink-faint);font-size:.85rem;}
+  .wcard .pop{font-size:.7rem;color:var(--accent-2);margin-top:4px;}
+  .wcard.outlook{opacity:.72;}
+
+  /* ---------- itinerary ---------- */
+  .day{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line);}
+  .day:last-child{border-bottom:none;}
+  .day .when{text-align:left;}
+  .day .when .dow{font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;font-weight:800;font-size:.85rem;text-transform:uppercase;color:var(--accent-2);}
+  .day .when .dnum{font-size:1.6rem;font-weight:800;font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;}
+  .day .body h3{margin:0 0 4px;font-size:1.05rem;font-family:Georgia,serif;font-weight:700;}
+  .day .body p{margin:0;color:var(--ink-soft);}
+  .day .tag{
+    display:inline-block;font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;
+    font-size:.64rem;text-transform:uppercase;letter-spacing:.06em;
+    padding:2px 8px;border-radius:10px;background:var(--ok-bg);color:var(--ok);
+    margin-top:6px;margin-right:6px;
+  }
+
+  /* ---------- activity groups ---------- */
+  .groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+  .group h3{
+    font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;
+    color:var(--accent-2);margin:0 0 10px;
+  }
+  .group ul{margin:0;padding:0;list-style:none;}
+  .group li{padding:10px 0;border-bottom:1px solid var(--line);}
+  .group li:last-child{border-bottom:none;}
+  .group li b{display:block;font-size:.98rem;}
+  .group li .meta{color:var(--ink-faint);font-size:.82rem;}
+  .agepill{
+    display:inline-block;font-size:.62rem;font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.05em;padding:1px 7px;border-radius:8px;
+    background:var(--birch-dim);color:var(--ink-soft);margin-right:4px;margin-top:4px;
+  }
+  @media (prefers-color-scheme: dark){ .agepill{background:#ffffff14;} }
+
+  /* ---------- fishing report ---------- */
+  .fish-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:18px;}
+  .stat{padding:12px 14px;}
+  .stat .v{font-size:1.3rem;font-weight:800;font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;color:var(--accent);}
+  .stat .l{font-size:.68rem;color:var(--ink-faint);}
+  .species{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;}
+  .species span{
+    background:var(--card-bg);border:1px solid var(--card-bd);border-radius:20px;
+    padding:5px 12px;font-size:.85rem;
+  }
+
+  /* ---------- packing list ---------- */
+  .pl-banner{
+    display:none;background:#fff4e0;border:1px solid #d9a441;color:#5c3016;
+    padding:12px 16px;border-radius:8px;font-size:.88rem;margin-bottom:16px;
+  }
+  @media (prefers-color-scheme: dark){ .pl-banner{background:#3a2c12;color:#f0d9ac;border-color:#7a5a24;} }
+  .pl-banner.show{display:block;}
+  .pl-meta{font-size:.8rem;color:var(--ink-faint);margin-bottom:18px;}
+  .pl-add{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap;}
+  .pl-add input, .pl-add select{
+    font-family:Georgia,serif;font-size:.92rem;
+    padding:9px 12px;border-radius:6px;border:1px solid var(--card-bd);
+    background:var(--bg-panel);color:var(--ink);
+  }
+  .pl-add input[type=text]{flex:1;min-width:160px;}
+  .pl-add button{
+    font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.05em;font-weight:700;font-size:.8rem;
+    padding:9px 16px;border-radius:6px;border:none;background:var(--accent);color:#fff;cursor:pointer;
+  }
+  .pl-add button:hover{background:var(--accent-hi,var(--accent-2));}
+  .pl-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .pl-group h3{
+    font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.06em;font-size:.82rem;color:var(--accent-2);margin:0 0 10px;
+  }
+  .pl-item{
+    display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);
+  }
+  .pl-item:last-child{border-bottom:none;}
+  .pl-item input[type=checkbox]{margin-top:4px;width:16px;height:16px;accent-color:var(--ok);flex-shrink:0;}
+  .pl-item .txt{flex:1;}
+  .pl-item .txt.done label{text-decoration:line-through;color:var(--ink-faint);}
+  .pl-item label{cursor:pointer;font-size:.95rem;}
+  .pl-item .who{display:block;font-size:.74rem;color:var(--ink-faint);margin-top:1px;}
+  .pl-item .del{
+    background:none;border:none;color:var(--ink-faint);cursor:pointer;font-size:.85rem;
+    padding:0 4px;line-height:1;
+  }
+  .pl-item .del:hover{color:var(--accent);}
+  .pl-progress{font-size:.78rem;color:var(--ink-faint);margin-top:4px;}
+
+  footer{
+    padding:36px 24px 60px;color:var(--on-strip-dim);background:var(--bg-strip);
+    font-size:.82rem;
+  }
+  footer .inner{max-width:1040px;margin:0 auto;}
+  footer a{color:var(--on-strip);}
+  footer ul{padding-left:18px;margin:8px 0;}
+
+  ::selection{background:var(--accent);color:#fff;}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-inner">
+    <div class="mast-eyebrow label">
+      <span>MID-COAST MAINE</span><span class="dot">·</span>
+      <span>LAKE MEGUNTICOOK</span><span class="dot">·</span>
+      <span>AUG 1 – AUG 8, 2026</span>
+    </div>
+    <h1>Camden, Maine <span>— Family Trip</span></h1>
+    <p class="mast-sub">One house, seventeen of us, a week on the lake. Everything for the week lives here — weather, the loose plan, things to do, the fishing report, and the packing list we're all filling in together.</p>
+
+    <div class="strip num" id="countdown">
+      <div class="strip-item"><div class="n" id="cd-days">–</div><div class="l label">DAYS</div></div>
+      <div class="strip-item"><div class="n" id="cd-hours">–</div><div class="l label">HOURS</div></div>
+      <div class="strip-item"><div class="n" id="cd-mins">–</div><div class="l label">MINUTES</div></div>
+      <div class="strip-item"><div class="n" id="cd-status" style="display:none"></div></div>
+    </div>
+  </div>
+</header>
+
+<nav class="jump">
+  <div class="inner">
+    <a href="#weather">Weather</a>
+    <a href="#itinerary">Itinerary</a>
+    <a href="#activities">Things to do</a>
+    <a href="#fishing">Fishing report</a>
+    <a href="#packing">Packing list</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ============ WEATHER ============ -->
+  <section id="weather">
+    <div class="sec-head">
+      <div class="sec-eyebrow label">CONDITIONS</div>
+      <h2>Weather outlook</h2>
+      <p class="sec-note">Built July 30, 2026 and not auto-updating. Saturday–Monday are a real NOAA forecast; the rest of the week is a seasonal outlook, not a forecast — check <a href="https://forecast.weather.gov/MapClick.php?textField1=44.210169&textField2=-69.071581" target="_blank" rel="noopener">forecast.weather.gov</a> again closer to the day.</p>
+    </div>
+    <div class="weather-grid">
+      <div class="card wcard">
+        <div class="date">Sat Aug 1</div>
+        <div class="icon">☀️</div>
+        <div class="hi">77°F</div>
+        <div class="lo">62°F</div>
+        <div class="pop">Mostly sunny — arrival day</div>
+      </div>
+      <div class="card wcard">
+        <div class="date">Sun Aug 2</div>
+        <div class="icon">⛅</div>
+        <div class="hi">77°F</div>
+        <div class="lo">63°F</div>
+        <div class="pop">Partly sunny, 40% eve. showers</div>
+      </div>
+      <div class="card wcard">
+        <div class="date">Mon Aug 3</div>
+        <div class="icon">🌦️</div>
+        <div class="hi">78°F</div>
+        <div class="lo">62°F</div>
+        <div class="pop">Showers likely 10am–noon (60%)</div>
+      </div>
+      <div class="card wcard outlook">
+        <div class="date">Tue Aug 4</div>
+        <div class="icon">⛅</div>
+        <div class="hi">~74°F</div>
+        <div class="lo">~61°F</div>
+        <div class="pop">Outlook only</div>
+      </div>
+      <div class="card wcard outlook">
+        <div class="date">Wed Aug 5</div>
+        <div class="icon">🌤️</div>
+        <div class="hi">~73°F</div>
+        <div class="lo">~61°F</div>
+        <div class="pop">Outlook only</div>
+      </div>
+      <div class="card wcard outlook">
+        <div class="date">Thu Aug 6</div>
+        <div class="icon">☀️</div>
+        <div class="hi">~74°F</div>
+        <div class="lo">~60°F</div>
+        <div class="pop">Outlook only</div>
+      </div>
+      <div class="card wcard outlook">
+        <div class="date">Fri Aug 7</div>
+        <div class="icon">🌦️</div>
+        <div class="hi">~73°F</div>
+        <div class="lo">~61°F</div>
+        <div class="pop">Outlook only</div>
+      </div>
+      <div class="card wcard outlook">
+        <div class="date">Sat Aug 8</div>
+        <div class="icon">⛅</div>
+        <div class="hi">~74°F</div>
+        <div class="lo">~61°F</div>
+        <div class="pop">Departure day · outlook only</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ITINERARY ============ -->
+  <section id="itinerary">
+    <div class="sec-head">
+      <div class="sec-eyebrow label">LOOSE PLAN</div>
+      <h2>Rough itinerary</h2>
+      <p class="sec-note">A shape for the week, not a schedule — with 17 people, plans will move around. Big blocks are left open on purpose.</p>
+    </div>
+
+    <div class="card" style="padding:6px 18px;">
+      <div class="day">
+        <div class="when"><div class="dow">Sat</div><div class="dnum">1</div></div>
+        <div class="body">
+          <h3>Arrival &amp; settle in</h3>
+          <p>Roll in through the afternoon, claim rooms, get the kitchen stocked. Dock time and a low-key dinner on the deck. First sunset over Megunticook.</p>
+          <span class="tag">Lake</span><span class="tag">Everyone</span>
+        </div>
+      </div>
+      <div class="day">
+        <div class="when"><div class="dow">Sun</div><div class="dnum">2</div></div>
+        <div class="body">
+          <h3>Lake day — Barrett's Cove</h3>
+          <p>Swimming and kayaking, either off the dock or at Barrett's Cove Beach (sandy, lifeguarded in season). Ice cream run into the village in the afternoon; harbor dinner if anyone has the energy.</p>
+          <span class="tag">Lake</span><span class="tag">Kids</span>
+        </div>
+      </div>
+      <div class="day">
+        <div class="when"><div class="dow">Mon</div><div class="dnum">3</div></div>
+        <div class="body">
+          <h3>Mount Battie morning</h3>
+          <p>Hikers go up the Mount Battie Trail (0.5–1 mi, ~600 ft gain, moderate, steep in spots); anyone who'd rather skip the climb can drive the Battie Auto Road to the same summit tower. Picnic in Camden Hills State Park after. Open afternoon — nap, lake, or a wine-tasting run to Cellardoor Winery in Lincolnville for the adults.</p>
+          <span class="tag">Hike</span><span class="tag">Flexible</span>
+        </div>
+      </div>
+      <div class="day">
+        <div class="when"><div class="dow">Tue</div><div class="dnum">4</div></div>
+        <div class="body">
+          <h3>Camden village &amp; harbor</h3>
+          <p>Morning browsing the shops downtown. Afternoon windjammer sail (book ahead for a group this size — see Things to Do below) past Curtis Island Light. Lobster dinner on the water.</p>
+          <span class="tag">Village</span><span class="tag">Book ahead</span>
+        </div>
+      </div>
+      <div class="day">
+        <div class="when"><div class="dow">Wed</div><div class="dnum">5</div></div>
+        <div class="body">
+          <h3>Open lake day</h3>
+          <p>No plans on purpose. Kayaking, paddleboards, dock fishing, reading. Consider a group lobster bake at the house in the evening — order ahead from a local seafood market for 17.</p>
+          <span class="tag">Lake</span><span class="tag">Flex day</span>
+        </div>
+      </div>
+      <div class="day">
+        <div class="when"><div class="dow">Thu</div><div class="dnum">6</div></div>
+        <div class="body">
+          <h3>Rockland &amp; Rockport side trip</h3>
+          <p>Farnsworth Art Museum in Rockland for anyone who wants culture and A/C; a casual seafood shack lunch in Rockport. Optional — the lake house crowd can just stay home.</p>
+          <span class="tag">Optional</span><span class="tag">Adults</span>
+        </div>
+      </div>
+      <div class="day">
+        <div class="when"><div class="dow">Fri</div><div class="dnum">7</div></div>
+        <div class="body">
+          <h3>Last full day</h3>
+          <p>One more swim, pack the non-essentials tonight. Farewell family dinner — either a big harbor restaurant reservation or one last cookout at the house.</p>
+          <span class="tag">Everyone</span>
+        </div>
+      </div>
+      <div class="day">
+        <div class="when"><div class="dow">Sat</div><div class="dnum">8</div></div>
+        <div class="body">
+          <h3>Departure</h3>
+          <p>Coffee on the deck, clean up, checkout. Safe travels home.</p>
+          <span class="tag">Checkout</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITIES ============ -->
+  <section id="activities">
+    <div class="sec-head">
+      <div class="sec-eyebrow label">IDEAS</div>
+      <h2>Things to do</h2>
+      <p class="sec-note">Grouped so everyone can pick their own week.</p>
+    </div>
+    <div class="groups">
+      <div class="group card">
+        <h3>Lake stuff</h3>
+        <ul>
+          <li><b>Swim off the dock</b><div class="meta">Right at the house — the easiest option every day.</div><span class="agepill">All ages</span></li>
+          <li><b>Barrett's Cove Beach</b><div class="meta">Town beach on Megunticook, sandy entry, good for little kids.</div><span class="agepill">Kids</span></li>
+          <li><b>Kayak / paddleboard</b><div class="meta">Bring or rent — the lake is calm and mostly no-wake.</div><span class="agepill">Teens</span><span class="agepill">Adults</span></li>
+          <li><b>Lake fishing</b><div class="meta">Bass, pickerel, and perch right off the dock — see the fishing report below.</div><span class="agepill">All ages</span></li>
+          <li><b>Route 105 &amp; Route 52 boat launches</b><div class="meta">If anyone's trailering in a boat for the week.</div><span class="agepill">Adults</span></li>
+        </ul>
+      </div>
+      <div class="group card">
+        <h3>Camden village + coast</h3>
+        <ul>
+          <li><b>Windjammer sail</b><div class="meta">Schooner day-sails from Camden Harbor past Curtis Island Light, ~2 hrs, $50–65/person. Book ahead for a group our size.</div><span class="agepill">Teens</span><span class="agepill">Adults</span></li>
+          <li><b>Mount Battie / Camden Hills State Park</b><div class="meta">Short steep hike or drive to the summit; 360° views over the harbor and bay. Park entry fee.</div><span class="agepill">All ages*</span></li>
+          <li><b>Curtis Island Light overlook</b><div class="meta">Land-based lighthouse view, easy walk, no hike required.</div><span class="agepill">Grandparents</span></li>
+          <li><b>Downtown Camden shops &amp; harbor walk</b><div class="meta">Flat, stroller/wheelchair friendly, easy half-day.</div><span class="agepill">Grandparents</span><span class="agepill">Kids</span></li>
+          <li><b>Farnsworth Art Museum, Rockland</b><div class="meta">~20 min drive; strong Wyeth collection, good rainy/hot-day option.</div><span class="agepill">Adults</span></li>
+        </ul>
+      </div>
+      <div class="group card">
+        <h3>Food &amp; drink</h3>
+        <ul>
+          <li><b>Camden Cone</b><div class="meta">Local ice cream, downtown Camden.</div><span class="agepill">Kids</span></li>
+          <li><b>Peter Ott's on the Water / The Waterfront</b><div class="meta">Harbor-side seafood dinners, popular — reserve for a big group.</div><span class="agepill">Book ahead</span></li>
+          <li><b>Lobster bake at the house</b><div class="meta">Order live/cooked lobster for 17 from a local seafood market instead of a restaurant wait.</div><span class="agepill">Everyone</span></li>
+          <li><b>Graffam Bros Seafood Shack, Rockport</b><div class="meta">Casual, order-at-the-window lobster rolls.</div><span class="agepill">Casual</span></li>
+          <li><b>Cellardoor Winery, Lincolnville</b><div class="meta">~15 min away, tastings and a nice porch — good adults-escape-for-an-hour spot.</div><span class="agepill">Adults</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FISHING ============ -->
+  <section id="fishing">
+    <div class="sec-head">
+      <div class="sec-eyebrow label">LAKE MEGUNTICOOK</div>
+      <h2>Fishing report</h2>
+      <p class="sec-note">General conditions and access info, not a live bite report — ask at a local bait shop for what's biting that day.</p>
+    </div>
+    <div class="fish-stats">
+      <div class="card stat"><div class="v">1,352</div><div class="l label">Acres</div></div>
+      <div class="card stat"><div class="v">2</div><div class="l label">Public boat launches</div></div>
+      <div class="card stat"><div class="v">16+</div><div class="l label">License age (freshwater)</div></div>
+    </div>
+    <div class="card" style="padding:18px 20px;">
+      <p style="margin-top:0">Lake Megunticook sits right against the towering cliffs of Mount Megunticook on its east shore. It fishes well for warm- and cold-water species alike:</p>
+      <div class="species">
+        <span>Largemouth bass</span><span>Smallmouth bass</span><span>Rainbow trout</span>
+        <span>Landlocked salmon</span><span>Brown trout</span><span>Brook trout</span>
+        <span>Chain pickerel</span><span>White perch</span>
+      </div>
+      <p><b>Access:</b> Route 105 launch (southwest shore) — gravel ramp, shallow depending on water level, trailer parking across the road, carry-in/out friendly. Route 52 launch (east shore) — deeper water for bigger boats, less trailer parking. Both have seasonal public restrooms. Dock fishing right at the house is the easiest option for kids.</p>
+      <p><b>License:</b> Maine requires a freshwater fishing license for anyone 16+ fishing inland waters — kids under 16 can fish unlicensed alongside a licensed adult. Non-resident options: 1-day $18, 3-day $30, 7-day $62, season $83. Buy online through Maine's <a href="https://www1.maine.gov/online/dif-w/moses/index.html" target="_blank" rel="noopener">MOSES system</a> or at a sporting goods store in town.</p>
+    </div>
+  </section>
+
+  <!-- ============ PACKING LIST ============ -->
+  <section id="packing">
+    <div class="sec-head">
+      <div class="sec-eyebrow label">SHARED &amp; LIVE</div>
+      <h2>Packing list</h2>
+      <p class="sec-note">Everyone can check things off and add items — updates show up for the whole family in real time.</p>
+    </div>
+
+    <div class="pl-banner" id="pl-banner">
+      Packing list needs a one-time setup — see <code>README.md</code> in the repo for the 5-minute Firebase steps. Until then, changes here won't save or sync.
+    </div>
+    <div class="pl-meta" id="pl-status">Connecting…</div>
+
+    <div class="pl-add">
+      <input type="text" id="pl-new-item" placeholder="Add an item (e.g. citronella candles)">
+      <select id="pl-new-cat">
+        <option value="house">House / shared gear</option>
+        <option value="lake">Lake gear</option>
+        <option value="food">Food &amp; drink</option>
+        <option value="personal">Personal</option>
+        <option value="kids">Kids' stuff</option>
+      </select>
+      <input type="text" id="pl-new-who" placeholder="Who's bringing it? (optional)" style="max-width:180px">
+      <button id="pl-add-btn">Add</button>
+    </div>
+
+    <div class="pl-groups" id="pl-groups">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="inner">
+    <p><b>Sources</b> — built July 30, 2026 as a one-time page, not auto-refreshing.</p>
+    <ul>
+      <li>Weather: <a href="https://forecast.weather.gov/MapClick.php?textField1=44.210169&textField2=-69.071581" target="_blank" rel="noopener">NOAA/NWS forecast</a> and <a href="https://en.climate-data.org/north-america/united-states-of-america/maine/camden-878301/t/august-8/" target="_blank" rel="noopener">climate-data.org</a> seasonal averages</li>
+      <li>Lake Megunticook fishing &amp; access: <a href="https://www.lake-link.com/maine-lakes/waldo-county-county/megunticook-lake/318299/" target="_blank" rel="noopener">Lake-Link</a>, <a href="https://www.coastalmountains.org/preserves/megunticook-lake-by-boat/" target="_blank" rel="noopener">Coastal Mountains Land Trust</a>, <a href="https://camdenparksandrec.com/boat-launches/" target="_blank" rel="noopener">Camden Parks &amp; Rec</a></li>
+      <li>Maine fishing license rules: <a href="https://fishinglicenseinfo.org/maine-non-resident-fishing-license/" target="_blank" rel="noopener">fishinglicenseinfo.org</a></li>
+      <li>Camden activities &amp; windjammers: <a href="https://www.travlinmad.com/blog/things-to-do-in-camden-maine" target="_blank" rel="noopener">Travlin' Mad</a>, <a href="http://www.camdenmainevacation.com/camden-windjammers.php" target="_blank" rel="noopener">TakeMe2 Camden</a></li>
+      <li>Mount Battie trail stats: <a href="https://eastcoasthiker.com/trails/mountbattie/" target="_blank" rel="noopener">East Coast Hiker</a>, <a href="https://tm2maine.com/mount-battie-trail-in-camden-hills-state-park/" target="_blank" rel="noopener">TM2 Maine</a></li>
+      <li>Restaurants &amp; lobster shacks: <a href="https://www.mainetravelmaven.com/maines-best-lobster-shacks/" target="_blank" rel="noopener">Maine Travel Maven</a></li>
+    </ul>
+    <p>Have a great trip.</p>
+  </div>
+</footer>
+
+<script type="module">
+  /* ---------- countdown ---------- */
+  const TRIP_START = new Date("2026-08-01T15:00:00-04:00"); // Sat Aug 1, 3pm ET check-in
+  const TRIP_END = new Date("2026-08-08T10:00:00-04:00");   // Sat Aug 8, 10am ET checkout
+
+  function tickCountdown(){
+    const now = new Date();
+    const daysEl = document.getElementById("cd-days");
+    const hoursEl = document.getElementById("cd-hours");
+    const minsEl = document.getElementById("cd-mins");
+    const statusEl = document.getElementById("cd-status");
+    let target = TRIP_START, label = "until we arrive";
+    if(now >= TRIP_START && now <= TRIP_END){
+      target = TRIP_END; label = "we're here — until checkout";
+    } else if(now > TRIP_END){
+      daysEl.parentElement.style.display = "none";
+      hoursEl.parentElement.style.display = "none";
+      minsEl.parentElement.style.display = "none";
+      statusEl.style.display = "block";
+      statusEl.textContent = "Trip's over — hope it was a good one.";
+      statusEl.classList.remove("num");
+      return;
+    }
+    const diff = Math.max(0, target - now);
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    daysEl.textContent = d;
+    hoursEl.textContent = h;
+    minsEl.textContent = m;
+    document.querySelector(".mast-eyebrow").lastElementChild.nextSibling; // no-op, keep label static
+  }
+  tickCountdown();
+  setInterval(tickCountdown, 30000);
+
+  /* ---------- packing list (Firebase Realtime Database) ---------- */
+  // ONE-TIME SETUP: create a free Firebase project at console.firebase.google.com,
+  // enable Realtime Database in test mode, add a Web App, and paste its config
+  // below. See README.md for step-by-step instructions.
+  const firebaseConfig = {
+    apiKey: "PASTE_API_KEY_HERE",
+    authDomain: "PASTE_AUTH_DOMAIN_HERE",
+    databaseURL: "PASTE_DATABASE_URL_HERE",
+    projectId: "PASTE_PROJECT_ID_HERE",
+    storageBucket: "PASTE_STORAGE_BUCKET_HERE",
+    appId: "PASTE_APP_ID_HERE",
+  };
+
+  const CATS = {
+    house: "House / shared gear",
+    lake: "Lake gear",
+    food: "Food & drink",
+    personal: "Personal",
+    kids: "Kids' stuff",
+  };
+
+  const DEFAULT_ITEMS = [
+    { cat: "house", text: "Coolers (2+)", who: "" },
+    { cat: "house", text: "Coffee maker + coffee", who: "" },
+    { cat: "house", text: "Paper towels / napkins", who: "" },
+    { cat: "house", text: "Trash bags", who: "" },
+    { cat: "house", text: "Bluetooth speaker", who: "" },
+    { cat: "house", text: "Board games / cards", who: "" },
+    { cat: "lake", text: "Kayaks / paddleboards", who: "" },
+    { cat: "lake", text: "Life jackets (kid sizes)", who: "" },
+    { cat: "lake", text: "Beach towels", who: "" },
+    { cat: "lake", text: "Fishing rods + tackle box", who: "" },
+    { cat: "lake", text: "Sunscreen (reef-safe)", who: "" },
+    { cat: "lake", text: "Bug spray / citronella", who: "" },
+    { cat: "food", text: "Lobster bake order (call ahead)", who: "" },
+    { cat: "food", text: "Breakfast staples for the group", who: "" },
+    { cat: "food", text: "Cooler drinks / beer / wine", who: "" },
+    { cat: "personal", text: "Hiking shoes (for Mount Battie)", who: "" },
+    { cat: "personal", text: "Swimsuits", who: "" },
+    { cat: "personal", text: "Rain jacket", who: "" },
+    { cat: "personal", text: "Fishing license (if 16+)", who: "" },
+    { cat: "kids", text: "Pool noodles / floats", who: "" },
+    { cat: "kids", text: "Sand/beach toys", who: "" },
+    { cat: "kids", text: "Kid sunscreen + hats", who: "" },
+  ];
+
+  const statusEl = document.getElementById("pl-status");
+  const bannerEl = document.getElementById("pl-banner");
+  const groupsEl = document.getElementById("pl-groups");
+
+  const isConfigured = !Object.values(firebaseConfig).some(v => v.startsWith("PASTE_"));
+
+  if(!isConfigured){
+    bannerEl.classList.add("show");
+    statusEl.textContent = "Not connected — showing a local starter list only.";
+    renderItems(DEFAULT_ITEMS.map((it, i) => ({ id: "local-" + i, ...it, done: false })));
+  } else {
+    initFirebase();
+  }
+
+  async function initFirebase(){
+    try{
+      const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js");
+      const { getDatabase, ref, onValue, set, update, remove, push, get } =
+        await import("https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js");
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const itemsRef = ref(db, "packingList/items");
+
+      const snap = await get(itemsRef);
+      if(!snap.exists()){
+        const seed = {};
+        DEFAULT_ITEMS.forEach((it) => {
+          const id = push(itemsRef).key;
+          seed[id] = { ...it, done: false };
+        });
+        await update(itemsRef, seed);
+      }
+
+      onValue(itemsRef, (s) => {
+        const data = s.val() || {};
+        const items = Object.entries(data).map(([id, v]) => ({ id, ...v }));
+        statusEl.textContent = `Live — ${items.length} items, updates instantly for everyone.`;
+        renderItems(items, { db, ref, set, update, remove, push, itemsRef });
+      });
+    }catch(err){
+      console.error("Firebase init failed:", err);
+      bannerEl.classList.add("show");
+      bannerEl.textContent = "Couldn't connect to the shared list (check the Firebase config in index.html). Showing a local starter list only.";
+      statusEl.textContent = "Not connected.";
+      renderItems(DEFAULT_ITEMS.map((it, i) => ({ id: "local-" + i, ...it, done: false })));
+    }
+  }
+
+  function renderItems(items, fb){
+    groupsEl.innerHTML = "";
+    Object.keys(CATS).forEach((catKey) => {
+      const catItems = items.filter(i => i.cat === catKey);
+      if(catItems.length === 0) return;
+      const doneCount = catItems.filter(i => i.done).length;
+
+      const groupDiv = document.createElement("div");
+      groupDiv.className = "pl-group card";
+      const h3 = document.createElement("h3");
+      h3.textContent = CATS[catKey];
+      groupDiv.appendChild(h3);
+
+      catItems.forEach((item) => {
+        const row = document.createElement("div");
+        row.className = "pl-item";
+
+        const cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.checked = !!item.done;
+        cb.id = "chk-" + item.id;
+        cb.addEventListener("change", () => {
+          if(fb){
+            fb.update(fb.ref(fb.db, `packingList/items/${item.id}`), { done: cb.checked });
+          } else {
+            item.done = cb.checked;
+            txt.classList.toggle("done", cb.checked);
+            progress.textContent = `${catItems.filter(i => i.done).length} / ${catItems.length} packed`;
+          }
+        });
+
+        const txt = document.createElement("div");
+        txt.className = "txt" + (item.done ? " done" : "");
+        const label = document.createElement("label");
+        label.htmlFor = cb.id;
+        label.textContent = item.text;
+        txt.appendChild(label);
+        if(item.who){
+          const who = document.createElement("span");
+          who.className = "who";
+          who.textContent = "— " + item.who;
+          txt.appendChild(who);
+        }
+
+        const del = document.createElement("button");
+        del.className = "del";
+        del.textContent = "✕";
+        del.title = "Remove item";
+        del.addEventListener("click", () => {
+          if(fb) fb.remove(fb.ref(fb.db, `packingList/items/${item.id}`));
+        });
+
+        row.append(cb, txt, del);
+        groupDiv.appendChild(row);
+      });
+
+      const progress = document.createElement("div");
+      progress.className = "pl-progress";
+      progress.textContent = `${doneCount} / ${catItems.length} packed`;
+      groupDiv.appendChild(progress);
+
+      groupsEl.appendChild(groupDiv);
+    });
+
+    // wire "add item"
+    const addBtn = document.getElementById("pl-add-btn");
+    const newAdd = addBtn.cloneNode(true); // strip old listeners on re-render
+    addBtn.replaceWith(newAdd);
+    newAdd.addEventListener("click", () => {
+      const textInput = document.getElementById("pl-new-item");
+      const catInput = document.getElementById("pl-new-cat");
+      const whoInput = document.getElementById("pl-new-who");
+      const text = textInput.value.trim();
+      if(!text) return;
+      const newItem = { cat: catInput.value, text, who: whoInput.value.trim(), done: false };
+      if(isConfigured && fb){
+        const key = fb.push(fb.itemsRef).key;
+        fb.update(fb.ref(fb.db, `packingList/items/${key}`), newItem);
+      } else {
+        items.push({ id: "local-" + Date.now(), ...newItem });
+        renderItems(items);
+      }
+      textInput.value = "";
+      whoInput.value = "";
+    });
+  }
+</script>
+
+</body>
+</html>
